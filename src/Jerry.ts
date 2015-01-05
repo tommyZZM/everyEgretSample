@@ -16,51 +16,8 @@ class Jerry extends egret.DisplayObjectContainer{
     }
 
     protected loadcomplete(e:RES.ResourceEvent){
-
-        var a = new egret.Sprite();
-        a.width = a.height = 200;
-        a.graphics.beginFill(0xffffff);
-        a.graphics.drawCircle(a.width/2,a.height/2,100);
-        a.graphics.endFill();
-        a.anchorX = a.anchorY = 0.5;
-        a.x = stageWidth(0.5);a.y=stageHeight(0.5);
-
-
-        a.touchEnabled = true;
-        a['shawod'] = new egret.Shape();
-        a['shawod'].graphics.beginFill(0x000000,0.6);
-        a['shawod'].graphics.drawCircle(a.width/2,a.height/2,100);
-        a['shawod'].graphics.endFill();
-        a['shawod'].alpha = 0;
-        a.addChild(a['shawod']);
-        a['selected'] = false;
-
-        a['update'] = function(){
-          this.selected?egret.Tween.get(this).to({scaleX:0.8,scaleY:0.8},200):egret.Tween.get(this).to({scaleX:1,scaleY:1},200);
-        };
-
-        this._spoon = a;
-        this.addChild(this._spoon);
-        this._spoon.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchBegin,this);
-        this._spoon.addEventListener(egret.TouchEvent.TOUCH_END,this.onTouchEnd,this);
-        this._spoon.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onTouchTap,this);
-        //this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
-    }
-
-    protected onTouchBegin(e:egret.Event){
-        console.log('onTouchBegin');
-        egret.Tween.get(e.target.shawod).to({alpha:1},200);
-    }
-
-    protected onTouchEnd(e:egret.Event){
-        console.log('onTouchEnd');
-        egret.Tween.get(e.target.shawod).to({alpha:0},200);
-    }
-
-    protected onTouchTap(e:egret.Event){
-        console.log('onTouchTap',e.target.shawod.alpha);
-        e.target.selected = !e.target.selected;
-        e.target.update();
+        //Example Name Here~~
+        this.addChild(new sample.MethodExpand());
     }
 }
 
@@ -72,4 +29,22 @@ function stageWidth(multiple:number=1):number
 function stageHeight(multiple:number=1):number
 {
     return egret.MainContext.instance.stage.stageHeight*multiple;
+}
+
+function copy(something):any{
+    var a = something;
+    return a;
+}
+
+class NameAble{
+    private _name:string;
+
+    public constructor() {
+        this._name = this['__proto__']['__class__'];
+        this._name = /\.?(\w+)$/.exec(this._name)[1];
+    }
+
+    protected get name():string{
+        return this._name;
+    }
 }
