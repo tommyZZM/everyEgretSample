@@ -9,15 +9,7 @@ class Jerry extends egret.DisplayObjectContainer{
 
     private  onAddToStage(event:egret.Event){
         this.removeEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
-        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.loadcomplete,this);
-
-        RES.loadConfig('resource/resource.json','resource/');
-        RES.loadGroup('preload');
-    }
-
-    protected loadcomplete(e:RES.ResourceEvent){
-        //Example Name Here~~
-        this.addChild(new sample.MethodExpand());
+        this.addChild(new sample.JumpingPanda());
     }
 }
 
