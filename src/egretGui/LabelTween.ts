@@ -17,6 +17,7 @@ module sample {
             var text:egret.gui.Label = new egret.gui.Label();
             text.text = 'HaHa';
             text.anchorX = text.anchorY = 0.5;
+            text.textAlign = 'center';
             text.textColor = 0xf1c40f;
             text.height = 33;
             text.width = stageWidth();
@@ -33,7 +34,6 @@ module sample {
                 var color = boo?0xf1c40f:0xe74c3c;
                 this.tween.to({scaleX:scale,scaleY:scale},200);//textColor:color,
                 this.tween.call(this.warning,this,[!boo]);
-                console.log(boo);
                 //boo?this.tween.to({scaleX:2,scaleY:2},200):this.tween.to({scaleX:1,scaleY:1},200);
                 //this.tween.call(this.warning,this,[!boo]);
             };
