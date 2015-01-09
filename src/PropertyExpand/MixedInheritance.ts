@@ -15,14 +15,14 @@ module sample {
     }
 
     class Jerry{
-        private _spoon:string = 'food'
+        private _spoon:string = 'food';
         public hello(...arg){
             console.log('hi!i m cute jerry!')
         }
     }
 
     class Domry{
-        private _spoon:string = 'food'
+        private _spoon:string = 'nothing';
         public balabala(...arg){
             console.log('balabala!i m cute domry!')
         }
