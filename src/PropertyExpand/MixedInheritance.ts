@@ -1,29 +1,45 @@
-module sample{
+module sample {
     export class MixedInheritance extends egret.DisplayObjectContainer{
+
         public constructor() {
             super();
-            var j = new mixedinheritance.Jerry();
-            var b = new mixedinheritance.Perry();
-            j['balala'] = b['balala'];
-            j['balala']();
+
+            var j:any = new XssTommy();
+            j.mixExtend(Domry);
+            j.balabala();
+            j.sayhi();
+            j.hello();
+            console.log(j);
+        }
+
+    }
+
+    class Jerry{
+        private _spoon:string = 'food'
+        public hello(...arg){
+            console.log('hi!i m cute jerry!')
         }
     }
 
-    module mixedinheritance{
-
-        export class Jerry extends NameAble{
-            protected sellMeng(){
-                console.log(this.name+' Jerry.sellMeng');
-            }
+    class Domry{
+        private _spoon:string = 'food'
+        public balabala(...arg){
+            console.log('balabala!i m cute domry!')
         }
 
-        export class Perry extends NameAble{
-
-            protected balala(){
-                console.log(this.name+' Perry.balala');
-            }
+        public sayhi(...arg){
+            console.log('hi!i m cute domry!')
         }
     }
 
+    class XssTommy extends Jerry{
+        public mixExtend(Class,methodname?:string){
+            for(var i in Class['prototype']){
+                var f = Class['prototype'][i];
+                if(i!='__class__'&&!this[i]){
+                    this['__proto__'][i] = f;
+                }
+            }
+        }
+    }
 }
-
