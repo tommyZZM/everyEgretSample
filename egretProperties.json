@@ -1,17 +1,15 @@
 {
-    "document_class": "Jerry",
-    "modules": [
-        {
-            "name": "core"
-        },
-        {
-            "name": "gui"
-        }
-    ],
-    "native": {
-        "path_ignore": [
-
-        ]
-    },
-    "egret_version":"1.5.0"
+	"document_class": "Jerry",
+	"modules": [
+		{
+			"name": "core"
+		},
+		{
+			"name": "gui"
+		}
+	],
+	"native": {
+		"path_ignore": []
+	},
+	"egret_version": "1.5.2"
 }

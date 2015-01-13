@@ -9,7 +9,7 @@ class Jerry extends egret.DisplayObjectContainer{
 
     private  onAddToStage(event:egret.Event){
         this.removeEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
-        this.addChild(new sample.MixedInheritance());
+        this.addChild(new sample.MapStruct());
     }
 }
 
