@@ -6,7 +6,9 @@ module sample {
             console.log('here');
 
             var j:Jerry = new Jerry();
-            j.eating('aaa')
+            console.log(typeof j);
+            console.log(typeof j.add);
+            console.log(typeof Jerry);
         }
     }
 
@@ -14,9 +16,9 @@ module sample {
         public constructor() {
         }
 
-        public eating(...arg):void;
-        public eating(spoon:string,times:number):void;
-        public eating():void{
+        public add(a:number,b:number):void;
+        public add(a:string,b:string):void;
+        public add(a:any,b:any):void{
 
         }
 
